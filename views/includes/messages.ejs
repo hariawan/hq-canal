@@ -1,0 +1,23 @@
+<% if(!validator.isNull(errors) && errors.length) { %>
+  <div class="error-msg">
+    <p><%- errors %></p>
+  </div>
+<% } %>
+
+<% if(!validator.isNull(warning) && warning.length) { %>
+  <div class="warning-msg">
+    <p><%- warning %></p>
+  </div>
+<% } %>
+
+<% if(!validator.isNull(info) && info.length) { %>
+  <div class="info-msg">
+    <p><%- info %></p>
+  </div>
+<% } %>
+
+<% if(!validator.isNull(success) && success.length) { %>
+  <div class="success-msg">
+    <p><%- success %></p>
+  </div>
+<% } %>

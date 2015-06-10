@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <% include includes/header %>
+  <body class="index">
+    <% include includes/messages %>
+    <% include includes/messages-ajax %>
+    <form action="/payment" method="post" autocomplete="off" class="payment-form">
+      <div class="row">
+        <div class="col">
+          <h3>Summary</h3>
+          <ul>
+            <li><p class="cart"><span class="text-b total">1</span> Ticket to join HotelQuickly</p></li>
+            <li></li>
+          </ul>
+          <div class="row">
+            <div class="col" style="width: 40%; padding: 0">
+              <div class="form-group">
+                <label>Currency</label>
+                <select name="currency" class="currency">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="THB">THB</option>
+                  <option value="HKD">HKD</option>
+                  <option value="SGD">SGD</option>
+                  <option value="AUD">AUD</option>
+                </select>
+              </div>
+            </div>
+            <div class="col" style="padding: 0">
+              <div class="form-group">
+                <label>price</label>
+                <input type="text" name="price" class="text-right price" value="179" required disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>full name</label>
+            <input type="text" name="fullname" required>
+          </div>
+        </div>
+        <div class="col">
+          <h3>Payment Details</h3>
+          <div class="form-group">
+            <label>holder name</label>
+            <input type="text" name="holdername" required>
+          </div>
+          <div class="form-group">
+            <label>number</label>
+            <input type="number" name="number" required>
+          </div>
+          <div class="form-group">
+            <label>expiration</label>
+            <select name="expmonth" class="exp-month">
+              <% for(var j=1; j<=12; j++) { %>
+                <option value="<%= j %>"><%= j %></option>
+              <% } %>
+            </select>
+            <span>/</span>
+            <select name="expyear" class="exp-year">
+              <% var thisYear = parseInt(new Date().getFullYear()) %>
+              <% for(var j=thisYear; j<=thisYear+20; j++) { %>
+                <option value="<%= j %>"><%= j %></option>
+              <% } %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>ccv</label>
+            <input type="number" name="ccv" style="width: 70px" size="4" maxlength="4" required>
+          </div>
+          <div class="form-group text-right">
+            <input type="submit" value="Buy" title="Buy">
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row success-alert none">
+      <div class="col text-center">
+        <h1>Congratulations, eticket was sent to your mail</h1>
+        <a href="#" class="back-form">Back to form</a>
+      </div>
+    </div>
+    <script type="text/javascript" src="/javascripts/index.min.js"></script>
+  </body>
+</html>

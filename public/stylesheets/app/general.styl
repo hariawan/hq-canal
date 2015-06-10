@@ -1,0 +1,118 @@
+$browncolor = #6A5A50
+
+*
+  margin 0
+  padding 0
+  -webkit-font-smoothing antialiased
+  -moz-font-smoothing antialiased
+  -o-font-smoothing antialiased
+  font-smoothing antialiased
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  -o-box-sizing border-box
+  box-sizing border-box
+  outline 0px solid transparent
+
+body
+  font 14px Arial, sans-serif
+  color $browncolor
+  margin 0 auto
+  max-width 768px
+  background-color #F7FAF2
+  padding 50px
+
+ul
+  margin 0
+  padding 0
+  list-style-type none
+
+  li
+    display inline
+    text-decoration none
+
+a
+  text-decoration none
+  color $browncolor
+
+  &:hover
+    text-decoration underline
+    color $browncolor
+
+.none
+  display none !important
+
+// aligment text
+.text-left
+  text-align left
+
+.text-center
+  text-align center
+
+.text-right
+  text-align right
+
+// style text
+.text-b
+  font-weight 600
+
+// column style
+.col
+  padding 0 10px
+
+// Message style
+.error-msg, .success-msg, .warning-msg, .info-msg, .error-msg-ajax, .success-msg-ajax, .warning-msg-ajax, .info-msg-ajax
+  position fixed
+  top 0
+  left 50%
+
+  z-index 9999
+  p
+    position relative
+    min-width 300px
+    margin 10px auto
+    padding 5px 20px
+    left -50%
+    background-color #FBDBCF
+
+    text-align center
+
+.error-msg p, .error-msg-ajax p
+  background-color #FBDBCF
+  color #E84C56
+  border 1px solid #F3746D
+
+.success-msg p, .success-msg-ajax p
+  background-color #E1FAC9
+  color #61A136
+  border 1px solid #91C753
+
+.warning-msg p, .warning-msg-ajax p
+  background-color #FCF0B0
+  color #d8b708
+  border 1px solid #a78d06
+
+.info-msg p, .info-msg-ajax p
+  background-color #D7EBF8
+  color #6ab5e5
+  border 1px solid #acd5f0
+
+.error-msg-ajax, .success-msg-ajax, .warning-msg-ajax, .info-msg-ajax
+  display none
+
+@media (min-width: 768px)
+  .row
+    width 100%
+    display table
+    table-layout fixed
+
+  .col
+    display table-cell
+
+// @media only screen and (min-width: 320px) and (max-width: 768px)
+//   .row
+//     width 100%
+//     display table
+//     table-layout fixed
+
+//   .col
+//     display table-cell
